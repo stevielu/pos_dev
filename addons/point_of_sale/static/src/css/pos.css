@@ -533,7 +533,7 @@ td {
             box-sizing: border-box;
     position:absolute;
     left:0;
-    width:440px;
+    width:470px;
     top:0px;
     bottom:0;
     border-right: solid 1px #CECBCB;
@@ -671,7 +671,7 @@ td {
     border-bottom-left-radius: 4px;
 }
 .pos .actionpad .button.pay {
-    height: 162px;
+    height: 193px;
 }
 .pos .actionpad .button.pay .pay-circle {
     display: block;
@@ -718,7 +718,7 @@ td {
     display: inline-block;
     float: right;
     text-align: center;
-    width: 216px;
+    width: 244px;
     margin: 16px;
     margin-top: 8px;
     margin-left: 0px;
@@ -790,7 +790,7 @@ td {
 }
 
 #toggle:checked ~ .fieldsetContainer {
-    height: 50px;
+    height: 234px;
 }
 
 label .arrow-dn { display: inline-block; }
@@ -805,7 +805,7 @@ label .arrow-up { display: none; }
     position: absolute;
     top: 0;
     bottom:0;
-    left: 440px;
+    left: 470px;
     right: 0;
     vertical-align: top;
     -webkit-transform: translate3d(0,0,0);
