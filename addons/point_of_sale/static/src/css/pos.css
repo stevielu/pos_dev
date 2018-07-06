@@ -713,6 +713,7 @@ td {
 
 /*  ********* The Numpad ********* */
 
+
 .pos .numpad {
     display: inline-block;
     float: right;
@@ -776,6 +777,27 @@ td {
     color: #a5a1a1;
     cursor: not-allowed;
 }
+
+
+.fieldsetContainer {
+    height: 0;
+    overflow: hidden;
+    transition: height 400ms linear;
+}
+
+#toggle {
+    display: none;
+}
+
+#toggle:checked ~ .fieldsetContainer {
+    height: 50px;
+}
+
+label .arrow-dn { display: inline-block; }
+label .arrow-up { display: none; }
+
+#toggle:checked ~ label .arrow-dn { display: none; }
+#toggle:checked ~ label .arrow-up { display: inline-block; }
 
 /*  ********* The right pane contains the screens and headers ********* */
 
@@ -988,6 +1010,14 @@ td {
     height: 100px;
     text-align: center;
     cursor: pointer;
+}
+
+.category-img-hide{
+    display: none;
+}
+
+.product-img-hide{
+    display: none;
 }
 
 .pos .category-button .category-img img {

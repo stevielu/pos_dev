@@ -156,37 +156,49 @@
     </t>
 
     <t t-name="NumpadWidget">
-        <div class="numpad">
-            <button class="input-button number-char">1</button>
-            <button class="input-button number-char">2</button>
-            <button class="input-button number-char">3</button>
-            <button class="mode-button" data-mode='quantity'>Qty</button>
-            <br />
-            <button class="input-button number-char">4</button>
-            <button class="input-button number-char">5</button>
-            <button class="input-button number-char">6</button>
-            <button class="mode-button" data-mode='discount'>Disc</button>
-            <br />
-            <button class="input-button number-char">7</button>
-            <button class="input-button number-char">8</button>
-            <button class="input-button number-char">9</button>
-            <button class="mode-button" data-mode='price'>Price</button>
-            <br />
-            <button class="input-button numpad-minus" >+/-</button>
-            <button class="input-button number-char">0</button>
-            <button class="input-button number-char">.</button>
-            <button class="input-button numpad-backspace">
-                <img style="pointer-events: none;" src="/point_of_sale/static/src/img/backspace.png" width="24" height="21" />
-            </button>
+        <div class="numpad showHide">
+            <input type="checkbox" id="toggle" />
+            <label for="toggle">
+                <span class='expand'>
+                    <span class="changeArrow arrow-up">↑</span>
+                    <span class="changeArrow arrow-dn">↓</span>
+                    Line expand and collapse
+                </span>
+            </label>
+            <div class="fieldsetContainer">
+                <fieldset id="fdstLorem">
+                    <button class="input-button number-char">1</button>
+                    <button class="input-button number-char">2</button>
+                    <button class="input-button number-char">3</button>
+                    <button class="mode-button" data-mode='quantity'>Qty</button>
+                    <br />
+                    <button class="input-button number-char">4</button>
+                    <button class="input-button number-char">5</button>
+                    <button class="input-button number-char">6</button>
+                    <button class="mode-button" data-mode='discount'>Disc</button>
+                    <br />
+                    <button class="input-button number-char">7</button>
+                    <button class="isnput-button number-char">8</button>
+                    <button class="input-button number-char">9</button>
+                    <button class="mode-button" data-mode='price'>Price</button>
+                    <br />
+                    <button class="input-button numpad-minus" >+/-</button>
+                    <button class="input-button number-char">0</button>
+                    <button class="input-button number-char">.</button>
+                    <button class="input-button numpad-backspace">
+                        <img style="pointer-events: none;" src="/point_of_sale/static/src/img/backspace.png" width="24" height="21" />
+                    </button>
+                </fieldset>
+            </div>
         </div>
     </t>
 
     <t t-name="CategoryButton">
-        <span class='category-button js-category-switch' t-att-data-category-id="category.id" >
-            <div class="category-img">
+        <span class='category-button js-category-switch' t-att-data-category-id="category.id" style="background-color: #6ec89b;">
+            <div class="category-img category-img-hide">
                 <img t-att-src="image_url" />
             </div>
-            <div class="category-name">
+            <div class="category-name" style="font-size: 16px;text-align: center;color: white;line-height: 120px;">
                 <t t-esc="category.name"/>
             </div>
         </span>
@@ -1243,10 +1255,10 @@
 
     <t t-name="Product">
         <span class='product' t-att-data-product-id="product.id">
-            <div class="product-img">
-                <img t-att-src='image_url' /> 
+            <div class="product-img ">
+                <img t-att-src='image_url' class="product-img-hide"/> 
                 <t t-if="!product.to_weight">
-                    <span class="price-tag">
+                    <span class="price-tag" style="z-index:1;">
                         <t t-esc="widget.format_currency(product.get_price(pricelist, 1),'Product Price')"/>
                     </span>
                 </t>
@@ -1256,7 +1268,7 @@
                     </span>
                 </t>
             </div>
-            <div class="product-name">
+            <div class="product-name" style="height: 100%;padding-top: 38px;text-align: center;background: initial;color: white;background-color: #03A9F4;">
                 <t t-esc="product.display_name"/>
             </div>
         </span>
